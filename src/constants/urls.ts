@@ -6,6 +6,10 @@ export const urls = {
             return baseUrl + '/' + id;
         }
     },
-    posts: {},
-    comments:{}
+    posts: {
+        allPosts:baseUrl+'/posts'
+    },
+    comments:{
+        allComments:baseUrl+'/comments'
+    }
 }
