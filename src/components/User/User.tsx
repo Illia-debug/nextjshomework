@@ -5,6 +5,7 @@ type MyPropsType={
     user:IUser
 }
 export const User:FC<MyPropsType> = ({user}) => {
+
   return(
       <div>
           {user.name}
