@@ -1,5 +1,6 @@
 import React from 'react';
 import {IUser} from "@/model/IUser";
+import {User} from "@/components/User/User";
 
 const Users = async () => {
     let users: IUser[] | [] = [];
@@ -13,7 +14,7 @@ const Users = async () => {
     return (
         <div>
             {
-                 users.map((value) => <div key={value.id}> {value.name}</div>)
+                 users.map((value) => <User user={value} key={value.id}/>)
             }
         </div>
     );
