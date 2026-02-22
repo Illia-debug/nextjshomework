@@ -13,6 +13,10 @@ export const urls = {
         }
     },
     comments:{
-        allComments:baseUrl+'/comments'
+        allComments:baseUrl+'/comments',
+        byId:(id:string)=>{
+            return baseUrl+'/comments/'+id
+        }
     }
+
 }

@@ -24,5 +24,9 @@ export const userService = {
     getComments:async ():Promise<IComment[]>=>{
         return await fetch(urls.comments.allComments)
             .then((response)=>response.json())
+    },
+    getComment: async (id: string): Promise<IComment> => {
+        return await fetch(urls.comments.byId(id))
+            .then((response)=> response.json())
     }
 }
