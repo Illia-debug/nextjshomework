@@ -1,14 +1,20 @@
 import React from "react";
+import {userService} from "@/services/Api.services";
 type Props={
     params: { id: string; };
 }
 
+
 const Page = async ({params}:Props) => {
- const newVar = await params;
-    console.log(newVar)
+ const {id} = await params;
+ await userService.getUser(id).then(( oneUser)=>{
+     console.log(oneUser)
+ })
+
     return (
         <div>
             user content
+
         </div>
     );
 };

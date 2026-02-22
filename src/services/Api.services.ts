@@ -8,7 +8,7 @@ export const userService = {
         return await fetch(urls.users.allUsers)
             .then((response) => response.json())
     },
-    getUser: async (id: number) => {
+    getUser: async (id: string):Promise<IUser> => {
         return await fetch(urls.users.byId(id))
             .then((response) => response.json())
     },
