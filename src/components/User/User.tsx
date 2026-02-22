@@ -2,10 +2,10 @@ import {IUser} from "@/model/IUser";
 import {FC} from "react";
 import Link from "next/link";
 
-type MyPropsType={
+ type MyPropsTypeUser ={
     user:IUser
 }
-export const User:FC<MyPropsType> = ({user}) => {
+export const User:FC<MyPropsTypeUser> = ({user}) => {
 
   return(
       <div>
