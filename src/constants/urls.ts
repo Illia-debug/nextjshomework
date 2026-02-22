@@ -7,7 +7,10 @@ export const urls = {
         }
     },
     posts: {
-        allPosts:baseUrl+'/posts'
+        allPosts: baseUrl + '/posts',
+        byId: (id: string) => {
+            return baseUrl + '/posts/' + id
+        }
     },
     comments:{
         allComments:baseUrl+'/comments'

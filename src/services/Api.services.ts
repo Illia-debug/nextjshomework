@@ -16,6 +16,11 @@ export const userService = {
         return await fetch(urls.posts.allPosts)
             .then((response)=> response.json())
     },
+    getPost: async (id: string): Promise<IPost> => {
+        return await fetch(urls.posts.byId(id))
+            .then((response)=> response.json())
+    },
+
     getComments:async ():Promise<IComment[]>=>{
         return await fetch(urls.comments.allComments)
             .then((response)=>response.json())

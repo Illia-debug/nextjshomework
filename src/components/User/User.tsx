@@ -12,7 +12,7 @@ export const User:FC<MyPropsTypeUser> = ({user}) => {
           {user.name}
           <div style={{
               color:'red'
-          }}> <Link href={'/users/'+user.id}>user detail</Link> </div>
+          }}> <Link href={'/users/'+user.id}>user detail link</Link> </div>
 
       </div>
   )
