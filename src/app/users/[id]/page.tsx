@@ -1,6 +1,5 @@
 import React from "react";
-import {userService} from "@/services/Api.services";
-import {IUser} from "@/model/IUser";
+import UserId from "@/components/UseId/UserId";
 
 type Props={
     params: { id: string; };
@@ -8,18 +7,10 @@ type Props={
 
 
 const Page = async ({params}:Props) => {
- const {id} = await params;
-    let user = {} as IUser;
- await userService.getUser(id).then(( oneUser)=>{
-     // console.log(oneUser)
-     user = oneUser
- })
-    // console.log(user)
 
     return (
         <div>
-            <div>{user.name},{user.id}</div>
-            <div>email:{user.email}</div>
+           <UserId params={params}/>
         </div>
     );
 };
