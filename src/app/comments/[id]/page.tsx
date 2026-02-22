@@ -1,19 +1,12 @@
-import React from 'react';
-import {IComment} from "@/model/IComment";
-import {userService} from "@/services/Api.services";
+import CommentId from "@/components/CommentId/CommentId";
 type Props={
     params: { id: string; };
 }
-
 const Page = async ({params}:Props) => {
-    const {id} = await params;
-    let comment = {} as IComment;
-    await userService.getComment(id).then((oneComment)=>{
-        comment=oneComment
-    })
+
     return (
         <div>
-           <div>{comment.id} name:{comment.name}</div>
+            <CommentId params={params}/>
         </div>
     );
 };
