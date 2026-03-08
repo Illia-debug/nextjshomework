@@ -1,13 +1,15 @@
 import React from 'react';
 import FormAddCar from "@/components/FormAddCar/FormAddCar";
+import {ICar} from "@/models/ICar";
+import {getAllCar} from "@/services/service.api";
+import Car from "@/components/Car/Car";
 
 const AllCars = async () => {
-  const cars =await  fetch('http://owu.linkpc.net/carsAPI/v1/cars')
-        .then((response) => response.json())
+    const cars: ICar[] = await getAllCar()
     return (
         <div>
             {
-                cars.map((car)=><div key={car.id}>{car.id} {car.brand}</div>)
+                cars.map((car) => <Car car={car} key={car.id}/>)
             }
             <FormAddCar/>
         </div>
