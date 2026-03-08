@@ -4,7 +4,7 @@ import {revalidatePath} from "next/cache";
 import {urls} from "@/constants/urls";
 
 export const postCar=async (formData:FormData)=>{
-    // console.log(formData)
+    //-------------------------------------------------
  await fetch(urls.cars.getAllCars, {
     method: 'POST',
     body: JSON.stringify({
@@ -16,5 +16,6 @@ export const postCar=async (formData:FormData)=>{
         'Content-Type': 'application/json'
     }
 })
+    //________________________________________________
     revalidatePath('/')
 }
