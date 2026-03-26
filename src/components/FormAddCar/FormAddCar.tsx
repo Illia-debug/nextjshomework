@@ -6,29 +6,34 @@ import {carFormData, carSchema} from "@/lib/schema";
 import {zodResolver} from "@hookform/resolvers/zod";
 
 const FormAddCar =  () => {
+
 const {register,handleSubmit,formState:{errors}} = useForm<carFormData>({
     resolver:zodResolver(carSchema)
 });
 const onSubmit = async (data:carFormData) => {
+
   const res = await fetch('http://owu.linkpc.net/carsAPI/v1/cars', {
       method: "POST",
       body: JSON.stringify({
-          brand: 'volvo',
-          price: 20000,
-          year: 1995
+          brand: data.brand,
+          price: data.price,
+          year: data.year,
       }),
       headers: {
           'Content-Type': 'application/json'
       }
+
   })
+
     const json = await res.json();
-    console.log(json);
+  console.log(json);
+
 }
 
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)} action={postCar}>
+            <form onSubmit={handleSubmit(onSubmit)} action={postCar} >
                 <input {...register('brand')} placeholder={'brand'}/>
                 {errors.brand&&(<p>{errors.brand.message}</p>)}
                 <input {...register('price')} placeholder={'price'}/>
